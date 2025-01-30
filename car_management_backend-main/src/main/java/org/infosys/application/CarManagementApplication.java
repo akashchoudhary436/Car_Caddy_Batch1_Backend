@@ -28,7 +28,7 @@ public class CarManagementApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8081") // Frontend port
+                        .allowedOrigins("http://localhost:7001") // Frontend port
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
