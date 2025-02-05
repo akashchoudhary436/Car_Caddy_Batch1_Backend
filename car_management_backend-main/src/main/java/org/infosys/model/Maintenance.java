@@ -2,8 +2,13 @@ package org.infosys.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+
+
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
@@ -26,7 +31,8 @@ public class Maintenance {
     @Size(min = 3, max = 50, message = "Maintenance type must be between 3 and 50 characters.")
     @Column(length = 50)
     private String maintenanceType;
-
+    
+    
     private LocalDate date;
 
     @Positive
@@ -96,6 +102,15 @@ public class Maintenance {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	@Override
+	public String toString() {
+		return "Maintenance [maintenanceId=" + maintenanceId + ", car=" + car + ", maintenanceType=" + maintenanceType
+				+ ", date=" + date + ", maintenanceCost=" + maintenanceCost + ", maintenanceStatus=" + maintenanceStatus
+				+ ", description=" + description + "]";
+	}
+	
+	
 
 
 

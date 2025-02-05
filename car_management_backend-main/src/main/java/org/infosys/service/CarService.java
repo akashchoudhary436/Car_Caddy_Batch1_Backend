@@ -23,6 +23,8 @@ public interface CarService {
 
 	public BigDecimal getCarRentalRate(Long carId) throws InvalidEntityException;
 	
+	List<Long> getAllCarIds();
+	
 	
 
 
